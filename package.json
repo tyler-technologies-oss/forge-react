@@ -1,0 +1,68 @@
+{
+  "name": "@tylertech/forge-react",
+  "version": "1.0.0-dev.0",
+  "repository": "tyler-technologies/forge-react",
+  "scripts": {
+    "start": "react-scripts start",
+    "build:demo": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build": "gulp build",
+    "changelog": "auto changelog",
+    "release": "auto shipit"
+  },
+  "dependencies": {
+    "reactify-wc": "^4.0.1-dev.0",
+    "tslib": "^2.3.1"
+  },
+  "peerDependencies": {
+    "@tylertech/forge": "^1.0.0-dev.2"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@tylertech-eslint/eslint-plugin": "^1.0.8",
+    "@tylertech/forge-build-tools": "^1.0.0-dev.0",
+    "@tylertech/forge": "^1.0.0-dev.2",
+    "@types/gulp": "^4.0.9",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.21",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.3",
+    "gulp": "^4.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.1",
+    "react-scripts": "4.0.3",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "sass": "~1.38.1",
+    "standard-changelog": "^2.0.27",
+    "ts-node": "^9.1.1",
+    "webpack": "4.44.2",
+    "typescript": "~4.6.3",
+    "web-vitals": "^1.1.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

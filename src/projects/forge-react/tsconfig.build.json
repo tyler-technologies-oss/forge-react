@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "ES2015",
+    "moduleResolution": "node",
+    "lib": ["dom", "dom.iterable", "es2015"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "declarationDir": "../../../dist/forge-react/typings",
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "types": [
+      "@tylertech/forge",
+      "@tylertech/forge-core"
+    ]
+  },
+  "files": [
+    "./src/index.ts"
+  ]
+}
