@@ -4,7 +4,7 @@ import { IExecPluginOptions } from '@auto-it/exec';
 
 const npmOptions: INpmConfig = {
   setRcToken: false,
-  publishFolder: 'dist'
+  publishFolder: 'dist/forge-react'
 };
 
 const execOptions: IExecPluginOptions = {

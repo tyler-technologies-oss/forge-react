@@ -19,6 +19,11 @@
     "@tylertech/forge": "^1.0.0-dev.2"
   },
   "devDependencies": {
+    "@auto-it/conventional-commits": "^10.36.5",
+    "@auto-it/exec": "^10.36.5",
+    "@auto-it/first-time-contributor": "^10.36.5",
+    "@auto-it/npm": "^10.36.5",
+    "@auto-it/pr-body-labels": "^10.36.5",
     "@reduxjs/toolkit": "^1.8.1",
     "@rollup/plugin-commonjs": "^21.0.3",
     "@rollup/plugin-node-resolve": "^13.1.3",
@@ -34,6 +39,7 @@
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.3",
+    "auto": "^10.36.5",
     "gulp": "^4.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
