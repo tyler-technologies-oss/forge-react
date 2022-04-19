@@ -72,7 +72,7 @@ export const createOverlayComponent = <
 
       // Listen for when options changes so we can update the overlay element
       if (controller.update && this.props.open && this.overlay && prevProps.options !== this.props.options) {
-        controller.update(this.overlay, this.props.options);
+        controller.update(this.overlay, this.props);
       }
       
       if (this.overlay && prevProps.open !== this.props.open && !this.props.open) {

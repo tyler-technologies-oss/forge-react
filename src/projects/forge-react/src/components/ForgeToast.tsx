@@ -19,7 +19,10 @@ const TOAST_CLOSE_DURATION = 250;
 const controller: IOverlayController<IToastComponent, ReactToastProps> = {
   create: createToast,
   show: el => document.body.appendChild(el),
-  hide: el => new Promise<void>(resolve => setTimeout(() => resolve(), TOAST_CLOSE_DURATION)),
+  hide: el => new Promise<void>(resolve => setTimeout(() => {
+    el.hide();
+    resolve();
+  }, TOAST_CLOSE_DURATION)),
   update: (el, { options }) => {
     if (!options) {
       return;
