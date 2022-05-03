@@ -39,11 +39,15 @@ export function useForgePopup(component: ReactComponentOrElements, componentProp
   };
   const controller = useDynamicForgeComponent('forge-popup', component, componentProps, delegate);
 
-  function show(targetElement: MutableRefObject<any>, { attributes,  ...options }: ForgePopupOptions = {}, dismissCallback?: () => void): IPopupComponent {
+  function show(targetElement: MutableRefObject<any>, { popupAttributes, popupClass,  ...options }: ForgePopupOptions = {}, dismissCallback?: () => void): IPopupComponent {
     const popupElement = controller.show({ targetElement: targetElement.current, ...options });
 
-    if (attributes) {
-      attributes.forEach((value, key) => popupElement.setAttribute(key, value));
+    if (popupAttributes) {
+      popupAttributes.forEach((value, key) => popupElement.setAttribute(key, value));
+    }
+
+    if (popupClass) {
+      popupElement.classList.add(popupClass);
     }
 
     if (options.static !== true) {

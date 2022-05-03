@@ -1,14 +1,9 @@
 import { BOTTOM_SHEET_CONSTANTS, IBottomSheetComponent } from '@tylertech/forge';
 import { createOverlayComponent, IOverlayController, OverlayProps } from '../core/createOverlayComponent';
 
-export interface ForgeBottomSheetOptions {
-  showBackdrop?: boolean;
-  backdropClose?: boolean;
-  escapeClose?: boolean;
-  fullscreen?: boolean;
+export interface ForgeBottomSheetOptions extends Partial<IBottomSheetComponent> {
   bottomSheetClass?: string;
-  attributes?: Map<string, string>;
-  beforeCloseCallback?: () => Promise<boolean> | boolean;
+  bottomSheetAttributes?: Map<string, string>;
 }
 
 export type ReactBottomSheetProps = OverlayProps & {
@@ -33,11 +28,11 @@ function createBottomSheet({ options }: ReactBottomSheetProps, dismissCallback: 
   const element = document.createElement('forge-bottom-sheet');
 
   if (options) {
-    const { attributes, bottomSheetClass, ...rest } = options;
+    const { bottomSheetAttributes, bottomSheetClass, ...rest } = options;
     Object.assign(element, rest);
 
-    if (attributes) {
-      attributes.forEach((value, key) => element.setAttribute(key, value));
+    if (bottomSheetAttributes) {
+      bottomSheetAttributes.forEach((value, key) => element.setAttribute(key, value));
     }
 
     if (bottomSheetClass) {

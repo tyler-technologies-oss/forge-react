@@ -27,7 +27,7 @@ const DialogBody = ({ hide }: { hide: () => void }): JSX.Element => {
 };
 
 export function DialogDemo(): JSX.Element {
-  const attributes = new Map([
+  const dialogAttributes = new Map([
     ['aria-labeledby', 'dialog-title'],
     ['aria-describedby', 'dialog-message']
   ]);
@@ -69,7 +69,7 @@ export function DialogDemo(): JSX.Element {
           <label htmlFor="fullscreen-checkbox">Fullscreen</label>
         </ForgeCheckbox>
       </div>
-      <ForgeDialog open={isOpen} options={{attributes, backdropClose, escapeClose, fullscreen}} onDismiss={() => setIsOpen(false)}>
+      <ForgeDialog open={isOpen} options={{dialogAttributes, backdropClose, escapeClose, fullscreen}} onDismiss={() => setIsOpen(false)}>
         <DialogBody hide={() => setIsOpen(false)} />
       </ForgeDialog>
     </>

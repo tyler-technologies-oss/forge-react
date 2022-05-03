@@ -28,11 +28,11 @@ export const useForgeBottomSheet = (component: ReactComponentOrElements, compone
   };
   const controller = useDynamicForgeComponent('forge-bottom-sheet', component, componentProps, delegate);
 
-  function show({ attributes, bottomSheetClass, ...options }: ForgeBottomSheetOptions = {}, dismissCallback?: () => void): IBottomSheetComponent {
+  function show({ bottomSheetAttributes, bottomSheetClass, ...options }: ForgeBottomSheetOptions = {}, dismissCallback?: () => void): IBottomSheetComponent {
     const bottomSheetElement = controller.show(options);
 
-    if (attributes) {
-      attributes.forEach((value, key) => bottomSheetElement.setAttribute(key, value));
+    if (bottomSheetAttributes) {
+      bottomSheetAttributes.forEach((value, key) => bottomSheetElement.setAttribute(key, value));
     }
 
     if (bottomSheetClass) {

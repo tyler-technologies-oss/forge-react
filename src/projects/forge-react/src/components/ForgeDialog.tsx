@@ -1,15 +1,9 @@
 import { DIALOG_CONSTANTS, IDialogComponent } from '@tylertech/forge';
 import { createOverlayComponent, IOverlayController, OverlayProps } from '../core/createOverlayComponent';
 
-export interface ForgeDialogOptions {
-  backdropClose?: boolean;
-  escapeClose?: boolean;
-  fullscreen?: boolean;
-  moveable?: boolean;
-  moveTarget?: string;
+export interface ForgeDialogOptions extends Partial<IDialogComponent> {
+  dialogAttributes?: Map<string, string>;
   dialogClass?: string;
-  attributes?: Map<string, string>;
-  beforeCloseCallback?: () => Promise<boolean> | boolean;
 }
 
 export type ReactDialogProps = OverlayProps & {
@@ -28,11 +22,11 @@ function createDialog({ options }: ReactDialogProps, dismissCallback: () => void
   const element = document.createElement('forge-dialog');
 
   if (options) {
-    const { attributes, dialogClass, ...rest } = options;
+    const { dialogAttributes, dialogClass, ...rest } = options;
     Object.assign(element, rest);
 
-    if (attributes) {
-      attributes.forEach((value, key) => element.setAttribute(key, value));
+    if (dialogAttributes) {
+      dialogAttributes.forEach((value, key) => element.setAttribute(key, value));
     }
 
     if (dialogClass) {

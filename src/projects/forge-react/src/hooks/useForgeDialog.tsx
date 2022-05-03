@@ -17,11 +17,11 @@ export const useForgeDialog = (component: ReactComponentOrElements, componentPro
   };
   const controller = useDynamicForgeComponent('forge-dialog', component, componentProps, delegate);
 
-  function show({ attributes, dialogClass, ...options }: ForgeDialogOptions = {}, dismissCallback?: () => void): IDialogComponent {
+  function show({ dialogAttributes, dialogClass, ...options }: ForgeDialogOptions = {}, dismissCallback?: () => void): IDialogComponent {
     const dialogElement = controller.show(options);
 
-    if (attributes) {
-      attributes.forEach((value, key) => dialogElement.setAttribute(key, value));
+    if (dialogAttributes) {
+      dialogAttributes.forEach((value, key) => dialogElement.setAttribute(key, value));
     }
 
     if (dialogClass) {

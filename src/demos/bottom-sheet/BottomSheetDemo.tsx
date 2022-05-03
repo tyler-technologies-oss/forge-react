@@ -27,7 +27,7 @@ const BottomSheetBody = ({ hide }: { hide: () => void }): JSX.Element => {
 };
 
 export function BottomSheetDemo(): JSX.Element {
-  const attributes = new Map([
+  const bottomSheetAttributes = new Map([
     ['aria-labeledby', 'bottom-sheet-title'],
     ['aria-describedby', 'bottom-sheet-message']
   ]);
@@ -38,14 +38,14 @@ export function BottomSheetDemo(): JSX.Element {
     <>
       <h2 className="forge-typography--title">Bottom sheet</h2>
       <ForgeButton type="raised">
-        <button type="button" onClick={() => showBottomSheet({ showBackdrop: true, attributes })}>Show bottom sheet (hooks</button>
+        <button type="button" onClick={() => showBottomSheet({ showBackdrop: true, bottomSheetAttributes })}>Show bottom sheet (hooks</button>
       </ForgeButton>
 
       <ForgeButton type="raised" style={{marginLeft: '16px'}}>
         <button type="button" onClick={() => setIsOpen(true)}>Show bottom sheet (component)</button>
       </ForgeButton>
 
-      <ForgeBottomSheet open={isOpen} options={{showBackdrop: true, attributes}} onDismiss={() => setIsOpen(false)}>
+      <ForgeBottomSheet open={isOpen} options={{showBackdrop: true, bottomSheetAttributes}} onDismiss={() => setIsOpen(false)}>
         <BottomSheetBody hide={() => setIsOpen(false)} />
       </ForgeBottomSheet>
     </>

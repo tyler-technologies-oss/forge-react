@@ -1,15 +1,9 @@
+import { IPopupComponent, POPUP_CONSTANTS } from '@tylertech/forge';
 import { MutableRefObject } from 'react';
-import { IPopupComponent, IPopupPosition, PopupAnimationType, PopupPlacement, POPUP_CONSTANTS } from '@tylertech/forge';
 import { createOverlayComponent, IOverlayController, OverlayProps } from '../core/createOverlayComponent';
 
-export interface ForgePopupOptions {
-  placement?: PopupPlacement;
-  animationType?: PopupAnimationType;
-  positionAdjustment?: IPopupPosition;
-  static?: boolean;
-  manageFocus?: boolean;
-  attributes?: Map<string, string>;
-  targetElement?: HTMLElement;
+export interface ForgePopupOptions extends Partial<IPopupComponent> {
+  popupAttributes?: Map<string, string>;
   popupClass?: string;
 }
 
@@ -42,11 +36,11 @@ function createPopup({ options, targetElementRef }: ReactPopupProps, dismissCall
   }
 
   if (options) {
-    const { attributes, popupClass, ...rest } = options;
+    const { popupAttributes, popupClass, ...rest } = options;
     Object.assign(element, rest);
     
-    if (attributes) {
-      attributes.forEach((value, key) => element.setAttribute(key, value));
+    if (popupAttributes) {
+      popupAttributes.forEach((value, key) => element.setAttribute(key, value));
     }
 
     if (popupClass) {

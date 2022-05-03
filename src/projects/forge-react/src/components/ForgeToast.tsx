@@ -1,13 +1,8 @@
-import { IToastComponent, PopupPlacement, TOAST_CONSTANTS } from '@tylertech/forge';
+import { IToastComponent, TOAST_CONSTANTS } from '@tylertech/forge';
 import { createOverlayComponent, IOverlayController, OverlayProps } from '../core/createOverlayComponent';
 
-export interface ForgeToastOptions {
-  message?: string;
-  actionText?: string;
+export interface ForgeToastOptions extends Partial<IToastComponent> {
   actionHandler?: () => void;
-  placement?: PopupPlacement;
-  duration?: number;
-  showClose?: boolean;
 }
 
 export type ReactToastProps = OverlayProps & {

@@ -1,22 +1,10 @@
 import { BusyIndicatorLayoutDirection, IBusyIndicatorComponent } from '@tylertech/forge';
 import { useDynamicForgeComponent, UseDynamicComponentDelegate } from './useDynamicForgeComponent';
 
-export interface ForgeBusyIndicatorOptions {
+export interface ForgeBusyIndicatorOptions extends Partial<IBusyIndicatorComponent> {
   busyIndicatorClass?: string;
-  attributes?: Map<string, string>;
-  parentElement?: HTMLElement;
-  titleText?: string;
-  message?: string;
-  cancel?: boolean;
-  spinner?: boolean;
-  progressBar?: boolean;
-  progressBarDeterminate?: boolean;
-  progress?: number;
-  buffer?: number;
-  width?: number | 'auto';
-  direction?: BusyIndicatorLayoutDirection;
-  manageFocus?: boolean;
-  fixed?: boolean;
+  busyIndicatorAttributes?: Map<string, string>;
+  hostElement?: HTMLElement;
 }
 
 export type UseForgeBusyIndicatorResult = [
@@ -30,11 +18,11 @@ export const useForgeBusyIndicator = (): UseForgeBusyIndicatorResult => {
   };
   const controller = useDynamicForgeComponent('forge-busy-indicator', undefined, undefined, delegate);
 
-  function show({ busyIndicatorClass, parentElement, attributes, ...options }: ForgeBusyIndicatorOptions = {}): IBusyIndicatorComponent {
+  function show({ busyIndicatorClass, hostElement, busyIndicatorAttributes, ...options }: ForgeBusyIndicatorOptions = {}): IBusyIndicatorComponent {
     const busyIndicatorElement = controller.show(options);
 
-    if (attributes) {
-      attributes.forEach((value, key) => busyIndicatorElement.setAttribute(key, value));
+    if (busyIndicatorAttributes) {
+      busyIndicatorAttributes.forEach((value, key) => busyIndicatorElement.setAttribute(key, value));
     }
 
     if (busyIndicatorClass) {
