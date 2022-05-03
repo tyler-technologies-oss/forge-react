@@ -1,6 +1,6 @@
 {
   "name": "@tylertech/forge-react",
-  "version": "1.0.0-dev.0",
+  "version": "1.0.0-rc.0",
   "description": "A Forge Components adapter library for React.",
   "main": "dist/forge-react.js",
   "module": "dist/forge-react.js",
