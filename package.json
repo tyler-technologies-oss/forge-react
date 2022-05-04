@@ -15,7 +15,7 @@
     "postversion": "cd dist/forge-react && npm version $npm_package_version --no-git-tag-version --no-commit-hooks --ignore-scripts"
   },
   "dependencies": {
-    "reactify-wc": "^4.0.1-dev.0",
+    "reactify-wc": "^4.0.0",
     "tslib": "^2.3.1"
   },
   "peerDependencies": {
@@ -25,7 +25,6 @@
     "@auto-it/conventional-commits": "^10.36.5",
     "@auto-it/first-time-contributor": "^10.36.5",
     "@auto-it/npm": "^10.36.5",
-    "@auto-it/pr-body-labels": "^10.36.5",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@reduxjs/toolkit": "^1.8.1",
@@ -35,8 +34,8 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "@tylertech-eslint/eslint-plugin": "^1.0.8",
-    "@tylertech/forge": "^1.0.0-dev.2",
-    "@tylertech/forge-build-tools": "^1.0.0-dev.0",
+    "@tylertech/forge": "^2.0.0-rc.0",
+    "@tylertech/forge-build-tools": "^2.0.0-rc.0",
     "@types/gulp": "^4.0.9",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.21",
