@@ -1,7 +1,9 @@
 {
   "name": "@tylertech/forge-react",
   "version": "2.0.0-rc.0",
-  "repository": "tyler-technologies/forge-react",
+  "repository": "tyler-technologies-oss/forge-react",
+  "author": "Tyler Technologies, Inc.",
+  "license": "Apache-2.0",
   "scripts": {
     "prepare": "husky install",
     "start": "react-scripts start",
@@ -19,7 +21,7 @@
     "tslib": "^2.3.1"
   },
   "peerDependencies": {
-    "@tylertech/forge": "^2.0.0-rc.0"
+    "@tylertech/forge": "^2.0.0"
   },
   "devDependencies": {
     "@auto-it/conventional-commits": "^10.36.5",
@@ -33,9 +35,9 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "@tylertech-eslint/eslint-plugin": "^1.0.8",
-    "@tylertech/forge": "^2.0.0-rc.0",
-    "@tylertech/forge-build-tools": "^2.0.0-rc.0",
+    "@tylertech-eslint/eslint-plugin": "^1.0.9",
+    "@tylertech/forge": "^2.0.0",
+    "@tylertech/forge-build-tools": "^2.0.0",
     "@types/gulp": "^4.0.9",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.21",

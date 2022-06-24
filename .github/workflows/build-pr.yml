@@ -5,15 +5,14 @@ on:
     paths:
       - '.github/workflows/**/*'
       - '.eslintrc.json'
-      - 'gulpfile.js'
+      - 'gulpfile.ts'
+      - 'package.json'
       - 'tsconfig.json'
       - 'src/projects/**/*'
 
 jobs:
   build:
     name: Build
-    uses: tyler-technologies/forge-automation-shared/.github/workflows/wf-build-and-test.yml@v0.10.0
+    uses: tyler-technologies/forge-automation-shared/.github/workflows/wf-build-and-test.yml@v0.17.0
     secrets:
-      ARTIFACTORY_TOKEN: ${{ secrets.FORGE_ARTIFACTORY_TOKEN }}
-      ARTIFACTORY_USERNAME: ${{ secrets.FORGE_ARTIFACTORY_USERNAME }}
-      ARTIFACTORY_REGISTRY: ${{ secrets.FORGE_ARTIFACTORY_NPM_REGISTRY }}
+      NPM_TOKEN: ${{ secrets.FORGE_NPM_TOKEN }}
