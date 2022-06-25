@@ -7,12 +7,13 @@
   "typings": "typings/index.d.ts",
   "author": "Tyler Technologies, Inc.",
   "license": "Apache-2.0",
+  "repository": "tyler-technologies-oss/forge-react",
   "dependencies": {
     "reactify-wc": "^4.0.0",
     "tslib": "^2.2.0"
   },
   "peerDependencies": {
-    "@tylertech/forge": "^2.0.0-rc.0",
+    "@tylertech/forge": "^2.0.0",
     "react": "^17.0.2"
   }
 }
