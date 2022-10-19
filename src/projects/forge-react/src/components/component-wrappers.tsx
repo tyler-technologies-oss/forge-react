@@ -35,6 +35,7 @@ export const ForgeFloatingActionButton = createElementProxy('forge-fab');
 export const ForgeIcon = createElementProxy('forge-icon');
 export const ForgeIconButton = createElementProxy('forge-icon-button');
 export const ForgeInlineMessage = createElementProxy('forge-inline-message');
+export const ForgeKeyboardShortcut = createElementProxy('forge-keyboard-shortcut');
 export const ForgeLabelValue = createElementProxy('forge-label-value');
 export const ForgeLinearProgress = createElementProxy('forge-linear-progress');
 export const ForgeList = createElementProxy('forge-list');

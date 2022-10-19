@@ -35,6 +35,7 @@ import {
   IIconButtonComponent,
   IIconComponent,
   IInlineMessageComponent,
+  IKeyboardShortcutComponent,
   ILabelValueComponent,
   ILinearProgressComponent,
   IListComponent,
@@ -122,6 +123,7 @@ declare global {
       'forge-icon': CustomElementProps<IIconComponent>;
       'forge-icon-button': CustomElementProps<IIconButtonComponent>;
       'forge-inline-message': CustomElementProps<IInlineMessageComponent>;
+      'forge-keyboard-shortcut': CustomElementProps<IKeyboardShortcutComponent>;
       'forge-label-value': CustomElementProps<ILabelValueComponent>;
       'forge-linear-progress': CustomElementProps<ILinearProgressComponent>;
       'forge-list': CustomElementProps<IListComponent>;
