@@ -59,6 +59,8 @@ import {
   ISelectDropdownComponent,
   ISkeletonComponent,
   ISliderComponent,
+  ISplitViewComponent,
+  ISplitViewPanelComponent,
   IStepComponent,
   IStepperComponent,
   ISwitchComponent,
@@ -145,6 +147,8 @@ declare global {
       'forge-option-group': CustomElementProps<IOptionGroupComponent>;
       'forge-skeleton': CustomElementProps<ISkeletonComponent>;
       'forge-slider': CustomElementProps<ISliderComponent>;
+      'forge-split-view': CustomElementProps<ISplitViewComponent>;
+      'forge-split-view-panel': CustomElementProps<ISplitViewPanelComponent>;
       'forge-stepper': CustomElementProps<IStepperComponent>;
       'forge-step': CustomElementProps<IStepComponent>;
       'forge-switch': CustomElementProps<ISwitchComponent>;
