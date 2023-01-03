@@ -35,6 +35,7 @@ import {
   IIconButtonComponent,
   IIconComponent,
   IInlineMessageComponent,
+  IKeyboardShortcutComponent,
   ILabelValueComponent,
   ILinearProgressComponent,
   IListComponent,
@@ -58,6 +59,8 @@ import {
   ISelectDropdownComponent,
   ISkeletonComponent,
   ISliderComponent,
+  ISplitViewComponent,
+  ISplitViewPanelComponent,
   IStepComponent,
   IStepperComponent,
   ISwitchComponent,
@@ -122,6 +125,7 @@ declare global {
       'forge-icon': CustomElementProps<IIconComponent>;
       'forge-icon-button': CustomElementProps<IIconButtonComponent>;
       'forge-inline-message': CustomElementProps<IInlineMessageComponent>;
+      'forge-keyboard-shortcut': CustomElementProps<IKeyboardShortcutComponent>;
       'forge-label-value': CustomElementProps<ILabelValueComponent>;
       'forge-linear-progress': CustomElementProps<ILinearProgressComponent>;
       'forge-list': CustomElementProps<IListComponent>;
@@ -143,6 +147,8 @@ declare global {
       'forge-option-group': CustomElementProps<IOptionGroupComponent>;
       'forge-skeleton': CustomElementProps<ISkeletonComponent>;
       'forge-slider': CustomElementProps<ISliderComponent>;
+      'forge-split-view': CustomElementProps<ISplitViewComponent>;
+      'forge-split-view-panel': CustomElementProps<ISplitViewPanelComponent>;
       'forge-stepper': CustomElementProps<IStepperComponent>;
       'forge-step': CustomElementProps<IStepComponent>;
       'forge-switch': CustomElementProps<ISwitchComponent>;
