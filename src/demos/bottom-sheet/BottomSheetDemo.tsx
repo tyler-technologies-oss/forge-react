@@ -28,7 +28,7 @@ const BottomSheetBody = ({ hide }: { hide: () => void }): JSX.Element => {
 
 export function BottomSheetDemo(): JSX.Element {
   const bottomSheetAttributes = new Map([
-    ['aria-labeledby', 'bottom-sheet-title'],
+    ['aria-labelledby', 'bottom-sheet-title'],
     ['aria-describedby', 'bottom-sheet-message']
   ]);
   const [showBottomSheet, hideBottomSheet] = useForgeBottomSheet(BottomSheetBody, { hide: () => hideBottomSheet() });

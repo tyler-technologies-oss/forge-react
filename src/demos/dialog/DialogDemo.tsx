@@ -28,7 +28,7 @@ const DialogBody = ({ hide }: { hide: () => void }): JSX.Element => {
 
 export function DialogDemo(): JSX.Element {
   const dialogAttributes = new Map([
-    ['aria-labeledby', 'dialog-title'],
+    ['aria-labelledby', 'dialog-title'],
     ['aria-describedby', 'dialog-message']
   ]);
   const [backdropClose, setBackdropClose] = useState(true);
