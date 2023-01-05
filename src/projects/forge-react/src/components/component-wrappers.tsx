@@ -25,6 +25,7 @@ export const ForgeCircularProgress = createElementProxy('forge-circular-progress
 export const ForgeColorPicker = createElementProxy('forge-color-picker');
 export const ForgeDateRangePicker = createElementProxy('forge-date-range-picker');
 export const ForgeDatePicker = createElementProxy('forge-date-picker');
+export const ForgeDialog = createElementProxy('forge-dialog');
 export const ForgeDivider = createElementProxy('forge-divider');
 export const ForgeDrawer = createElementProxy('forge-drawer');
 export const ForgeMiniDrawer = createElementProxy('forge-mini-drawer');

@@ -1,7 +1,11 @@
 import { DIALOG_CONSTANTS, IDialogComponent } from '@tylertech/forge';
-import { ForgeDialogOptions } from '..';
 import { ReactComponentOrElements } from '../utils';
 import { useDynamicForgeComponent, UseDynamicComponentDelegate } from './useDynamicForgeComponent';
+
+export interface ForgeDialogOptions extends Partial<IDialogComponent> {
+  dialogAttributes?: Map<string, string>;
+  dialogClass?: string;
+}
 
 export type UseForgeDialogResult = [
   (options?: ForgeDialogOptions, dismissCallback?: () => void) => IDialogComponent,
@@ -10,10 +14,17 @@ export type UseForgeDialogResult = [
 
 export const useForgeDialog = (component: ReactComponentOrElements, componentProps?: any): UseForgeDialogResult => {
   const delegate: UseDynamicComponentDelegate<IDialogComponent> = {
-    show: instance => instance.open = true,
-    hide: instance => {
+    show: instance => {
+      document.body.appendChild(instance);
+      instance.open = true;
+    },
+    hide: instance => new Promise<void>(resolve => {
       instance.open = false;
-    }
+      setTimeout(() => {
+        instance.remove();
+        resolve();
+      }, DIALOG_CONSTANTS.numbers.ANIMATION_DURATION);
+    })
   };
   const controller = useDynamicForgeComponent('forge-dialog', component, componentProps, delegate);
 

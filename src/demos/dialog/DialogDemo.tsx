@@ -38,7 +38,7 @@ export function DialogDemo(): JSX.Element {
   const [showDialog, hideDialog] = useForgeDialog(DialogBody, { hide: () => hideDialog() });
 
   function showHookDialog(): void {
-    showDialog({ backdropClose, escapeClose, fullscreen });
+    showDialog({ backdropClose, escapeClose, fullscreen, dialogAttributes });
   }
 
   return (
@@ -46,30 +46,36 @@ export function DialogDemo(): JSX.Element {
       <h2 className="forge-typography--title">Dialog</h2>
 
       <ForgeButton type="raised">
-        <button type="button" onClick={() => setIsOpen(true)}>Show dialog (component)</button>
+        <button type="button" onClick={() => setIsOpen(true)}>Show dialog (static)</button>
       </ForgeButton>
+
       <ForgeButton type="raised" style={{marginLeft: '16px'}}>
-        <button type="button" onClick={showHookDialog}>Show dialog (hook)</button>
+        <button type="button" onClick={showHookDialog}>Show dialog (dynamic via hook)</button>
       </ForgeButton>
-      <div style={{marginTop: '16px'}}>
+
+      <div style={{marginTop: '16px', display: 'flex', flexDirection: 'column'}}>
         <ForgeCheckbox>
           <input type="checkbox" id="backdrop-close-checkbox" defaultChecked={backdropClose} onChange={() => setBackdropClose(!backdropClose)} />
           <label htmlFor="backdrop-close-checkbox">Backdrop close</label>
         </ForgeCheckbox>
-      </div>
-      <div>
         <ForgeCheckbox>
           <input type="checkbox" id="escape-close-checkbox" defaultChecked={escapeClose} onChange={() => setEscapeClose(!escapeClose)} />
           <label htmlFor="escape-close-checkbox">Escape close</label>
         </ForgeCheckbox>
-      </div>
-      <div>
         <ForgeCheckbox>
           <input type="checkbox" id="fullscreen-checkbox" defaultChecked={fullscreen} onChange={() => setFullscreen(!fullscreen)} />
           <label htmlFor="fullscreen-checkbox">Fullscreen</label>
         </ForgeCheckbox>
       </div>
-      <ForgeDialog open={isOpen} options={{dialogAttributes, backdropClose, escapeClose, fullscreen}} onDismiss={() => setIsOpen(false)}>
+
+      <ForgeDialog
+        aria-labelledby="dialog-title"
+        aria-describedby="dialog-message"
+        open={isOpen}
+        backdropClose={backdropClose}
+        escapeClose={escapeClose}
+        fullscreen={fullscreen}
+        on-forge-dialog-close={() => setIsOpen(false)}>
         <DialogBody hide={() => setIsOpen(false)} />
       </ForgeDialog>
     </>
