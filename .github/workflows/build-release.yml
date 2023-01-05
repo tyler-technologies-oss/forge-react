@@ -1,4 +1,4 @@
-## We only run this workflow on pushes to the main branch. This workflow will
+## We only run this workflow on pushes to the next branch. This workflow will
 ## first determine if a release is to be published, and if so, build and publish.
 ## Otherwise, if not a release, we just perform CI build validation.
 
@@ -7,7 +7,7 @@ name: Build and Release
 on:
   push:
     branches:
-      - main
+      - next
     paths:
       - '.github/workflows/**/*'
       - '.eslintrc.json'
@@ -64,10 +64,13 @@ jobs:
         run: |
           ## We use `auto version` to calculate whether this is a release build or not
           VERSION_RESULT=$(npx auto version)
-          if [[ "${VERSION_RESULT}" =~ ^(major|minor|patch|release)$ ]]; then
-            echo "::set-output name=release::true"
+          echo "Version calculation result: ${VERSION_RESULT}"
+          if [[ "${VERSION_RESULT}" =~ ^(premajor|preminor|prepatch)$ ]]; then
+            echo "Release: true"
+            echo "release=true" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=release::false"
+            echo "Release: false"
+            echo "release=false" >> $GITHUB_OUTPUT
           fi
 
       ## Detect if any specific files we care about have changed to help us know if we need to execute a CI build or Storybook deployment at all or not
