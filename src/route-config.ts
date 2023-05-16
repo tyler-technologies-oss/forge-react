@@ -6,6 +6,7 @@ import { Home } from './core/home/Home';
 import { AvatarDemo } from './demos/avatar/AvatarDemo';
 import { BadgeDemo } from './demos/badge/BadgeDemo';
 import { BannerDemo } from './demos/banner/BannerDemo';
+import { StackDemo } from './demos/stack/StackDemo';
 import { BottomSheetDemo } from './demos/bottom-sheet/BottomSheetDemo';
 import { ToastDemo } from './demos/toast/ToastDemo';
 import { DialogDemo } from './demos/dialog/DialogDemo';
@@ -35,6 +36,7 @@ const routes: IAppRoute[] = [
       { path: '/button', component: ButtonDemo, text: 'Button' },
       { path: '/dialog', component: DialogDemo, text: 'Dialog' },
       { path: '/popup', component: PopupDemo, text: 'Popup' },
+      { path: '/stack', component: StackDemo, text: 'Stack' },
       { path: '/table', component: TableDemo, text: 'Table' },
       { path: '/toast', component: ToastDemo, text: 'Toast' }
     ]

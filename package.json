@@ -36,7 +36,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "@tylertech-eslint/eslint-plugin": "^1.0.9",
-    "@tylertech/forge": "^2.9.0",
+    "@tylertech/forge": "^2.14.0",
     "@tylertech/forge-build-tools": "^2.0.0",
     "@types/gulp": "^4.0.9",
     "@types/jest": "^26.0.24",
