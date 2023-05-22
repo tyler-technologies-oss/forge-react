@@ -1,3 +1,24 @@
+# v2.2.0 (Mon May 22 2023)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Nick Andrews ([@nickonometry](https://github.com/nickonometry)), for all your work!
+
+#### 🚀 Enhancement
+
+- chore(stack): added react wrapper and stack demo [#5](https://github.com/tyler-technologies-oss/forge-react/pull/5) ([@nickonometry](https://github.com/nickonometry))
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/tyler-technologies/forge-react ([@DRiFTy17](https://github.com/DRiFTy17))
+
+#### Authors: 2
+
+- Kieran Nichols ([@DRiFTy17](https://github.com/DRiFTy17))
+- Nick Andrews ([@nickonometry](https://github.com/nickonometry))
+
+---
+
 # v2.1.0 (Wed Oct 19 2022)
 
 :tada: This release contains work from a new contributor! :tada:
