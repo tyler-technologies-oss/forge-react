@@ -21,7 +21,6 @@
     "src"
   ],
   "exclude": [
-    "auto.config.ts",
     "gulpfile.ts"
   ],
   "ts-node": {

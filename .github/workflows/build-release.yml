@@ -12,7 +12,7 @@ on:
       - '.github/workflows/**/*'
       - '.eslintrc.json'
       - 'package.json'
-      - 'auto.config.ts'
+      - '.autorc'
       - 'gulpfile.js'
       - 'tsconfig.json'
       - 'src/projects/**/*'
@@ -81,7 +81,7 @@ jobs:
             build:
               - '.github/workflows/**'
               - '.eslintrc.json'
-              - 'auto.config.ts'
+              - '.autorc'
               - 'package.json'
               - 'gulpfile.js'
               - 'tsconfig.json'
