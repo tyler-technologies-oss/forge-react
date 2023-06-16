@@ -16,6 +16,7 @@ on:
       - 'gulpfile.js'
       - 'tsconfig.json'
       - 'src/projects/**/*'
+  workflow_dispatch:
 
 concurrency: build-release-${{ github.ref }}
 
