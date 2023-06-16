@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Prepare Repository
         # Fetch full git history and tags
@@ -34,7 +34,7 @@ jobs:
 
       - name: Cache Dependencies
         id: cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
@@ -46,14 +46,13 @@ jobs:
             ${{ runner.os }}-
 
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: "16"
 
       - name: Install
         id: install
-        run: |
-          npm ci
+        run: npm ci
 
       ## Determine if this is a release build or not, which will affect which dependent jobs run below
       - name: Detect Release Status
@@ -95,7 +94,7 @@ jobs:
   build:
     name: Build
     needs: wf-config
-    uses: tyler-technologies-oss/forge-automation-shared/.github/workflows/wf-build-and-test.yml@v1.0.0
+    uses: tyler-technologies-oss/forge-automation-shared/.github/workflows/wf-build-and-test.yml@v2.8.1
     if: ${{ needs.wf-config.outputs.is-release == 'false' && needs.wf-config.outputs.build-files-changed == 'true' }}
     secrets:
       NPM_TOKEN: ${{ secrets.FORGE_NPM_TOKEN }}
@@ -104,7 +103,7 @@ jobs:
   build-and-release:
     name: Build and Release
     needs: wf-config
-    uses: tyler-technologies-oss/forge-automation-shared/.github/workflows/wf-build-release.yml@v1.0.0
+    uses: tyler-technologies-oss/forge-automation-shared/.github/workflows/wf-build-release.yml@v2.8.1
     if: ${{ needs.wf-config.outputs.is-release == 'true' }}
     with:
       PRODUCTION_RELEASE: true
