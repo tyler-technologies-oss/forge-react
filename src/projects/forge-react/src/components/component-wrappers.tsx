@@ -59,6 +59,7 @@ export const ForgeSkeleton = createElementProxy('forge-skeleton');
 export const ForgeSlider = createElementProxy('forge-slider');
 export const ForgeSplitView = createElementProxy('forge-split-view');
 export const ForgeSplitViewPanel = createElementProxy('forge-split-view-panel');
+export const ForgeStack = createElementProxy('forge-stack');
 export const ForgeStepper = createElementProxy('forge-stepper');
 export const ForgeStep = createElementProxy('forge-step');
 export const ForgeSwitch = createElementProxy('forge-switch');
