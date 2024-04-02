@@ -13,6 +13,7 @@ import {
   IBannerComponent,
   IBottomSheetComponent,
   IBusyIndicatorComponent,
+  IButtonAreaComponent,
   IButtonComponent,
   IButtonToggleComponent,
   IButtonToggleGroupComponent,
@@ -61,6 +62,7 @@ import {
   ISliderComponent,
   ISplitViewComponent,
   ISplitViewPanelComponent,
+  IStackComponent,
   IStepComponent,
   IStepperComponent,
   ISwitchComponent,
@@ -102,6 +104,7 @@ declare global {
       'forge-bottom-sheet': CustomElementProps<IBottomSheetComponent>;
       'forge-busy-indicator': CustomElementProps<IBusyIndicatorComponent>;
       'forge-button': CustomElementProps<IButtonComponent>;
+      'forge-button-area': CustomElementProps<IButtonAreaComponent>;
       'forge-button-toggle': CustomElementProps<IButtonToggleComponent>;
       'forge-button-toggle-group': CustomElementProps<IButtonToggleGroupComponent>;
       'forge-calendar': CustomElementProps<ICalendarComponent>;
@@ -149,6 +152,7 @@ declare global {
       'forge-slider': CustomElementProps<ISliderComponent>;
       'forge-split-view': CustomElementProps<ISplitViewComponent>;
       'forge-split-view-panel': CustomElementProps<ISplitViewPanelComponent>;
+      'forge-stack': CustomElementProps<IStackComponent>;
       'forge-stepper': CustomElementProps<IStepperComponent>;
       'forge-step': CustomElementProps<IStepComponent>;
       'forge-switch': CustomElementProps<ISwitchComponent>;
