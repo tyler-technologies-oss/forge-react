@@ -1,21 +1,9 @@
-## We only run this workflow on pushes to the next branch. This workflow will
-## first determine if a release is to be published, and if so, build and publish.
-## Otherwise, if not a release, we just perform CI build validation.
-
 name: Build and Release
 
 on:
   push:
     branches:
       - next
-    paths:
-      - '.github/workflows/**/*'
-      - '.eslintrc.json'
-      - 'package.json'
-      - '.autorc'
-      - 'gulpfile.js'
-      - 'tsconfig.json'
-      - 'src/projects/**/*'
   workflow_dispatch:
 
 concurrency: build-release-${{ github.ref }}
@@ -27,15 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Prepare Repository
-        # Fetch full git history and tags
         run: git fetch --unshallow --tags
 
       - name: Cache Dependencies
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
@@ -47,9 +34,9 @@ jobs:
             ${{ runner.os }}-
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "16"
+          node-version: "20"
 
       - name: Install
         id: install
@@ -75,7 +62,7 @@ jobs:
 
       ## Detect if any specific files we care about have changed to help us know if we need to execute a CI build or Storybook deployment at all or not
       - name: Check File Changes
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v3
         id: file-filter
         with:
           filters: |
@@ -86,7 +73,7 @@ jobs:
               - 'package.json'
               - 'gulpfile.js'
               - 'tsconfig.json'
-              - 'src/projects/**'
+              - 'lib/**'
     outputs:
       is-release: ${{ steps.detect-release.outputs.release }}
       build-files-changed: ${{ steps.file-filter.outputs.build == 'true' }}
@@ -95,7 +82,7 @@ jobs:
   build:
     name: Build
     needs: wf-config
-    uses: tyler-technologies-oss/forge-automation-shared/.github/workflows/wf-build-and-test.yml@v2.8.1
+    uses: tyler-technologies-oss/forge-automation-shared/.github/workflows/wf-build-and-test.yml@v2.9.0
     if: ${{ needs.wf-config.outputs.is-release == 'false' && needs.wf-config.outputs.build-files-changed == 'true' }}
     secrets:
       NPM_TOKEN: ${{ secrets.FORGE_NPM_TOKEN }}
@@ -104,7 +91,7 @@ jobs:
   build-and-release:
     name: Build and Release
     needs: wf-config
-    uses: tyler-technologies-oss/forge-automation-shared/.github/workflows/wf-build-release.yml@v2.8.1
+    uses: tyler-technologies-oss/forge-automation-shared/.github/workflows/wf-build-release.yml@v2.9.0
     if: ${{ needs.wf-config.outputs.is-release == 'true' }}
     with:
       PRODUCTION_RELEASE: true
