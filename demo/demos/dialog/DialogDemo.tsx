@@ -18,9 +18,7 @@ const DialogBody = ({ hide }: { hide: () => void }): JSX.Element => {
         </p>
       </div>
       <ForgeToolbar slot="footer" inverted>
-        <ForgeButton slot="end" type="raised">
-          <button type="button" onClick={hide} forge-dialog-focus="true">Close</button>
-        </ForgeButton>
+        <ForgeButton slot="end" variant="raised" onClick={hide} forge-dialog-focus="true">Close</ForgeButton>
       </ForgeToolbar>
     </ForgeScaffold>
   );
@@ -43,26 +41,16 @@ export function DialogDemo(): JSX.Element {
   return (
     <>
       <h2 className="forge-typography--subheading4">Dialog</h2>
-
-      <ForgeButton type="raised">
-        <button type="button" onClick={() => setIsOpen(true)}>Show dialog (static)</button>
-      </ForgeButton>
-
-      <ForgeButton type="raised" style={{marginLeft: '16px'}}>
-        <button type="button" onClick={showHookDialog}>Show dialog (dynamic via hook)</button>
-      </ForgeButton>
-
+      <ForgeButton variant="raised" onClick={() => setIsOpen(true)}>Show dialog (static)</ForgeButton>
+      <ForgeButton style={{marginLeft: '16px'}} variant="raised" onClick={showHookDialog}>Show dialog (dynamic via hook)</ForgeButton>
       <div style={{marginTop: '16px', display: 'flex', flexDirection: 'column'}}>
-        <ForgeCheckbox>
-          <input type="checkbox" id="persistent-checkbox" defaultChecked={persistent} onChange={() => setPersistent(!persistent)} />
-          <label htmlFor="persistent-checkbox">Persistent</label>
+        <ForgeCheckbox id="persistent-checkbox" defaultChecked={persistent} onChange={() => setPersistent(!persistent)}>
+          Persistent
         </ForgeCheckbox>
-        <ForgeCheckbox>
-          <input type="checkbox" id="fullscreen-checkbox" defaultChecked={fullscreen} onChange={() => setFullscreen(!fullscreen)} />
-          <label htmlFor="fullscreen-checkbox">Fullscreen</label>
+        <ForgeCheckbox id="fullscreen-checkbox" defaultChecked={fullscreen} onChange={() => setFullscreen(!fullscreen)}>
+          Fullscreen
         </ForgeCheckbox>
       </div>
-
       <ForgeDialog
         aria-labelledby="dialog-title"
         aria-describedby="dialog-message"

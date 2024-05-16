@@ -14,9 +14,7 @@ export function BannerDemo(): JSX.Element {
       <ForgeBanner theme="success">
         <ForgeIcon slot="icon" name="add_alert" />
         <div>Minim sunt eu laborum labore minim.</div>
-        <ForgeButton type="outlined" slot="button">
-          <button type="button">Learn more...</button>
-        </ForgeButton>
+        <ForgeButton slot="button" variant="outlined">Learn more...</ForgeButton>
       </ForgeBanner>
     </>
   );

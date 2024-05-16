@@ -14,46 +14,32 @@ export function ButtonDemo(): JSX.Element {
     <>
       <h2 className="forge-typography--subheading4">Button</h2>
       <div style={{display: 'flex', gap: '8px', alignItems: 'center'}}>
-        <ForgeButton>
-          <button disabled={isDisabled} type="button">Default</button>
+        <ForgeButton disabled={isDisabled}>Default</ForgeButton>
+
+        <ForgeButton variant="raised" disabled={isDisabled}>Raised</ForgeButton>
+
+        <ForgeButton variant="outlined" disabled={isDisabled}>Outlined</ForgeButton>
+
+        <ForgeButton variant="filled" disabled={isDisabled}>Unelevated</ForgeButton>
+
+        <ForgeButton dense={true} variant="outlined" disabled={isDisabled}>Dense outlined</ForgeButton>
+
+        <ForgeButton variant="outlined" disabled={isDisabled}>
+          <ForgeIcon name="favorite" />
+          <span>Leading icon</span>
         </ForgeButton>
 
-        <ForgeButton type="raised">
-          <button disabled={isDisabled} type="button">Raised</button>
-        </ForgeButton>
-
-        <ForgeButton type="outlined">
-          <button disabled={isDisabled} type="button">Outlined</button>
-        </ForgeButton>
-
-        <ForgeButton type="unelevated">
-          <button disabled={isDisabled} type="button">Unelevated</button>
-        </ForgeButton>
-
-        <ForgeButton type="outlined-dense">
-          <button disabled={isDisabled} type="button">Dense outlined</button>
-        </ForgeButton>
-
-        <ForgeButton type="outlined">
-          <button disabled={isDisabled} type="button">
-            <ForgeIcon name="favorite" />
-            <span>Leading icon</span>
-          </button>
-        </ForgeButton>
-
-        <ForgeButton type="outlined">
-          <button disabled={isDisabled} type="button">
-            <span>Trailing icon</span>
-            <ForgeIcon name="favorite" />
-          </button>
+        <ForgeButton variant="outlined" disabled={isDisabled}>
+          <span>Trailing icon</span>
+          <ForgeIcon name="favorite" />
         </ForgeButton>
       </div>
       <ForgeDivider className="demo-divider" />
       <div>
-        <ForgeCheckbox>
-          <input type="checkbox" id="disabled-checkbox" onChange={() => setIsDisabled(!isDisabled)} checked={isDisabled} />
-          <label htmlFor="disabled-checkbox">Disabled</label>
-        </ForgeCheckbox>
+        <ForgeCheckbox
+          id="disabled-checkbox"
+          onChange={() => setIsDisabled(!isDisabled)}
+          checked={isDisabled}>Disabled</ForgeCheckbox>
       </div>
     </>
   );

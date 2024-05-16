@@ -42,26 +42,16 @@ export function ToastDemo(): JSX.Element {
   return (
     <>
       <h2 className="forge-typography--subheading4">Toast ({isOpen ? 'open' : 'closed'})</h2>
-
-      <ForgeButton type="raised">
-        <button type="button" onClick={showToastDetached}>Show toast (detached)</button>
-      </ForgeButton>
-
-      <ForgeButton type="raised">
-        <button type="button" onClick={showToastComponent}>Show toast (component)</button>
-      </ForgeButton>
-
-      <ForgeButton type="raised" style={{marginLeft: '16px'}}>
-        <button type="button" onClick={showToastHook}>Show toast (hook)</button>
-      </ForgeButton>
-
+      <div style={{display: 'flex', gap: '16px'}}>
+        <ForgeButton variant="raised" onClick={showToastDetached}>Show toast (detached)</ForgeButton>
+        <ForgeButton variant="raised" onClick={showToastComponent}>Show toast (component)</ForgeButton>
+        <ForgeButton variant="raised" onClick={showToastHook}>Show toast (hook)</ForgeButton>
+      </div>
       <div style={{marginTop: '16px'}}>
-        <ForgeCheckbox>
-          <input type="checkbox" id="show-custom-component-checkbox" defaultChecked={showCustomComponent} onChange={() => setShowCustomComponent(!showCustomComponent)} />
-          <label htmlFor="show-custom-component-checkbox">Show custom component</label>
+        <ForgeCheckbox id="show-custom-component-checkbox" defaultChecked={showCustomComponent} onChange={() => setShowCustomComponent(!showCustomComponent)}>
+          Show custom component
         </ForgeCheckbox>
       </div>
-
       <ForgeToast open={isOpen} on-forge-toast-dismiss={() => setIsOpen(false)}>
         {showCustomComponent ? <CustomToastElement /> : 'Toast message! (component)'}
       </ForgeToast>

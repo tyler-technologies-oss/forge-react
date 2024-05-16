@@ -14,10 +14,8 @@ export function CellButton({ data, index }: { data: any; index: number }): JSX.E
 
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <ForgeIconButton>
-        <button type="button" onClick={handleClick}>
-          <ForgeIcon name="face" />
-        </button>
+      <ForgeIconButton onClick={handleClick}>
+        <ForgeIcon name="face" />
       </ForgeIconButton>
       <span className="forge-typography--label1">{data.name}</span>
     </div>

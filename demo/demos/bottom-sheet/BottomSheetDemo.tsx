@@ -18,9 +18,7 @@ const BottomSheetBody = ({ hide }: { hide: () => void }): JSX.Element => {
         </p>
       </div>
       <ForgeToolbar slot="footer" inverted>
-        <ForgeButton slot="end" type="raised">
-          <button type="button" onClick={hide}>Close</button>
-        </ForgeButton>
+        <ForgeButton slot="end" variant="raised" onClick={hide}>Close</ForgeButton>
       </ForgeToolbar>
     </ForgeScaffold>
   );
@@ -37,14 +35,13 @@ export function BottomSheetDemo(): JSX.Element {
   return (
     <>
       <h2 className="forge-typography--subheading4">Bottom sheet</h2>
-      <ForgeButton type="raised">
-        <button type="button" onClick={() => showBottomSheet({ persistent: true, bottomSheetAttributes })}>Show bottom sheet (hooks)</button>
-      </ForgeButton>
-
-      <ForgeButton type="raised" style={{marginLeft: '16px'}}>
-        <button type="button" onClick={() => setIsOpen(true)}>Show bottom sheet (component)</button>
-      </ForgeButton>
-
+      <ForgeButton
+        variant="raised"
+        onClick={() => showBottomSheet({ persistent: true, bottomSheetAttributes })}>Show bottom sheet (hooks)</ForgeButton>
+      <ForgeButton
+        style={{marginLeft: '16px'}}
+        variant="raised"
+        onClick={() => setIsOpen(true)}>Show bottom sheet (component)</ForgeButton>
       <ForgeBottomSheet open={isOpen} mode="modal" on-forge-bottom-sheet-close={() => setIsOpen(false)}>
         <BottomSheetBody hide={() => setIsOpen(false)} />
       </ForgeBottomSheet>

@@ -9,12 +9,12 @@ function ConfirmDialog({ close }: PropsWithChildren<any>): JSX.Element {
       </ForgeToolbar>
       <p style={{padding: '16px'}}>Are you sure you want to cancel?</p>
       <ForgeToolbar inverted>
-        <ForgeButton slot="end" type="outlined" style={{marginRight: '8px'}}>
-          <button type="button" onClick={() => close(false)}>Cancel</button>
-        </ForgeButton>
-        <ForgeButton slot="end" type="raised">
-          <button type="button" onClick={() => close(true)}>OK</button>
-        </ForgeButton>
+        <ForgeButton
+          slot="end"
+          style={{marginRight: '8px'}}
+          variant="outlined"
+          onClick={() => close(false)}>Cancel</ForgeButton>
+        <ForgeButton slot="end" variant="raised" onClick={() => close(true)}>OK</ForgeButton>
       </ForgeToolbar>
     </div>
   );
