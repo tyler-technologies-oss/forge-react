@@ -1,3 +1,15 @@
+# v3.0.0 (Tue Jun 11 2024)
+
+#### 💥 Breaking Change
+
+- feat: release GA 3.0 [#12](https://github.com/tyler-technologies-oss/forge-react/pull/12) ([@DRiFTy17](https://github.com/DRiFTy17))
+
+#### Authors: 1
+
+- Kieran Nichols ([@DRiFTy17](https://github.com/DRiFTy17))
+
+---
+
 # v2.3.0 (Wed Apr 03 2024)
 
 #### 🚀 Enhancement
