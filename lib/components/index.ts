@@ -1,1 +1,1 @@
-export * from './component-wrappers';
+export * from './proxies';
