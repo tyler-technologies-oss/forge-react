@@ -13,6 +13,7 @@ export const ForgeBackdrop = createElementProxy('forge-backdrop');
 export const ForgeBadge = createElementProxy('forge-badge');
 export const ForgeBanner = createElementProxy('forge-banner');
 export const ForgeBottomSheet = createElementProxy('forge-bottom-sheet');
+export const ForgeButtonArea = createElementProxy('forge-button-area');
 export const ForgeButton = createElementProxy('forge-button');
 export const ForgeButtonToggleGroup = createElementProxy('forge-button-toggle-group');
 export const ForgeButtonToggle = createElementProxy('forge-button-toggle');

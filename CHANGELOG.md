@@ -1,3 +1,19 @@
+# v2.3.0 (Wed Apr 03 2024)
+
+#### 🚀 Enhancement
+
+- feat: add `<ForgeButtonArea>` wrapper [#10](https://github.com/tyler-technologies-oss/forge-react/pull/10) ([@DRiFTy17](https://github.com/DRiFTy17))
+
+#### 🐛 Bug Fix
+
+- fix: update Auto [#8](https://github.com/tyler-technologies-oss/forge-react/pull/8) ([@DRiFTy17](https://github.com/DRiFTy17))
+
+#### Authors: 1
+
+- Kieran Nichols ([@DRiFTy17](https://github.com/DRiFTy17))
+
+---
+
 # v2.2.0 (Mon May 22 2023)
 
 :tada: This release contains work from a new contributor! :tada:

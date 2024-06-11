@@ -12,6 +12,7 @@ import {
   IBadgeComponent,
   IBannerComponent,
   IBottomSheetComponent,
+  IButtonAreaComponent,
   IButtonComponent,
   IButtonToggleComponent,
   IButtonToggleGroupComponent,
@@ -104,6 +105,7 @@ declare global {
       'forge-banner': CustomElementProps<IBannerComponent>;
       'forge-bottom-sheet': CustomElementProps<IBottomSheetComponent>;
       'forge-button': CustomElementProps<IButtonComponent>;
+      'forge-button-area': CustomElementProps<IButtonAreaComponent>;
       'forge-button-toggle': CustomElementProps<IButtonToggleComponent>;
       'forge-button-toggle-group': CustomElementProps<IButtonToggleGroupComponent>;
       'forge-calendar': CustomElementProps<ICalendarComponent>;
