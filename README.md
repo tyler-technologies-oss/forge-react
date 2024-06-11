@@ -1,7 +1,7 @@
-# Forge React
+# Tyler Forge™ React Adapter
 
 This repository contains the `@tylertech/forge-react` adapter library for working with
-Forge Web Components within a React application. This library contains React wrapper components,
+Tyler Forge™ components within a React application. This library contains React wrapper components,
 hooks, and other utilities to improve the developer experience when building applications with Forge.
 
 > Note: The `@tylertech/forge-react` package is not required when using Forge with React
@@ -9,17 +9,20 @@ hooks, and other utilities to improve the developer experience when building app
 
 ## The problem
 
-React doesn't pass data through the JavaScript API on HTML elements. This means that any Web Components
-created with the Custom Elements API in the browser will suffer from the same issue when trying to pass
-complex data types such as array, objects, and functions through to the underlying HTML element.
+React doesn't pass data through the JavaScript API (properties) on HTML elements. This means that any Web
+Components created with the Custom Elements API in the browser will suffer from the same issue when trying
+to pass complex data types such as array, objects, and functions through to the underlying HTML element.
 
 Another issue is how event bubbling works in React. Since React uses its own synthetic events system,
 standard HTML event bubbling from custom elements doesn't work, nor does attaching event listeners to
-these custom elements.
+these custom elements for any `CustomEvent` types.
 
 This library provides proxy React component wrappers for all Forge components to ensure that the APIs
 are properly consumed via the JavaScript API (HTML attributes are still usable as well), along with 
-providing the ability to listen to events on the elements.
+providing the ability to listen to custom events on the elements.
+
+> **Note:** React now natively supports communication with custom elements as of React 19. You will now be able
+> to use the standard Forge elements directly (without the React wrappers) in React 19+ going forward!
 
 ## Data binding
 
@@ -30,7 +33,7 @@ work as expected because `data` will get stringified:
 <forge-table data={data}></forge-table>
 ```
 
-By using this library, you will use the React wrapper components instead to ensure this works:
+By using this library, you will use the React wrapper components instead to ensure this works as expected:
 
 ```html
 <ForgeTable data={data} />
@@ -64,7 +67,7 @@ const DialogComponent = () => <div>Dialog component</div>;
 const SomeComponent = () => {
   // You provide a component to display in a `<forge-dialog>` as the first parameter, and
   // any (optional) configuration as the second parameter
-  const [showDialog, hideDialog] = useForgeDialog(DialogComponent, { escapeClose: false });
+  const [showDialog, hideDialog] = useForgeDialog(DialogComponent, { persistent: true });
 
   function handleClick(): void {
     showDialog();
@@ -78,7 +81,7 @@ const SomeComponent = () => {
 };
 ```
 
-Alternatively, if you're using class-based components, you can show a dialog (which internally uses the `useForgeDialog` hook) like this:
+Alternatively, if you're using components, you can show a dialog like this:
 
 ```ts
 import { ForgeDialog } from '@tylertech/forge';
@@ -91,7 +94,7 @@ const SomeComponent = () => {
   }
 
   return (
-    <ForgeDialog open={isOpen} escapeClose={false} onDismiss={() => setOpen(false)}>
+    <ForgeDialog open={isOpen} persistent on-forge-dialog-close={() => setOpen(false)}>
       <DialogComponent />
     </ForgeDialog>
   );
@@ -127,12 +130,9 @@ defineButtonComponent();
 
 ## Development
 
-This repository was created with `create-react-app`, and it contains `src/projects/forge-react`
-directory where the library lives.
-
 The demo application can be started by running `npm start`.
 
-To build the library, run the following: `npm run build:library`.
+To build the library, run the following: `npm run build`.
 
 > The built npm package output will be placed in the `dist/forge-react` directory.
 
