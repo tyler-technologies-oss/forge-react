@@ -1,3 +1,15 @@
+# v3.0.1 (Wed Aug 21 2024)
+
+#### 🐛 Bug Fix
+
+- fix: fix package exports and type for legacy tooling compatibility [#13](https://github.com/tyler-technologies-oss/forge-react/pull/13) ([@DRiFTy17](https://github.com/DRiFTy17))
+
+#### Authors: 1
+
+- Kieran Nichols ([@DRiFTy17](https://github.com/DRiFTy17))
+
+---
+
 # v3.0.0 (Tue Jun 11 2024)
 
 #### 💥 Breaking Change
