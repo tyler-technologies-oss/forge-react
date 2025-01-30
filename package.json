@@ -1,6 +1,6 @@
 {
   "name": "@tylertech/forge-react",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "The official Tyler Forge™ components adapter library for React.",
   "repository": "tyler-technologies-oss/forge-react",
   "author": "Tyler Technologies, Inc.",
