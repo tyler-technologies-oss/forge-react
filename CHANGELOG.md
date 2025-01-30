@@ -1,3 +1,15 @@
+# v3.1.0 (Thu Jan 30 2025)
+
+#### 🚀 Enhancement
+
+- chore: update to support forge 3.5.0 [#14](https://github.com/tyler-technologies-oss/forge-react/pull/14) ([@samrichardsontylertech](https://github.com/samrichardsontylertech))
+
+#### Authors: 1
+
+- Sam Richardson ([@samrichardsontylertech](https://github.com/samrichardsontylertech))
+
+---
+
 # v3.0.1 (Wed Aug 21 2024)
 
 #### 🐛 Bug Fix
