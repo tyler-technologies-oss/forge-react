@@ -1,7 +1,7 @@
 import { IconRegistry } from '@tylertech/forge';
 import { useEffect } from 'react';
 import { ForgeIcon, ForgeIconButton } from '@tylertech/forge-react';
-import { tylIconFace } from '@tylertech/tyler-icons/standard';
+import { tylIconFace } from '@tylertech/tyler-icons';
 
 export function CellButton({ data, index }: { data: any; index: number }): JSX.Element {
   useEffect(() => {

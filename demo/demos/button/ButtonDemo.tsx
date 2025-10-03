@@ -1,6 +1,6 @@
 import { IconRegistry } from '@tylertech/forge';
 import { ForgeButton, ForgeCheckbox, ForgeDivider, ForgeIcon } from '@tylertech/forge-react';
-import { tylIconFavorite } from '@tylertech/tyler-icons/standard';
+import { tylIconFavorite } from '@tylertech/tyler-icons';
 import { useEffect, useState } from 'react';
 
 export function ButtonDemo(): JSX.Element {
