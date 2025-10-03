@@ -1,6 +1,6 @@
 import { IconRegistry } from '@tylertech/forge';
 import { ForgeBanner, ForgeButton, ForgeIcon } from '@tylertech/forge-react';
-import { tylIconAddAlert } from '@tylertech/tyler-icons/standard';
+import { tylIconAddAlert } from '@tylertech/tyler-icons';
 import { useEffect } from 'react';
 
 export function BannerDemo(): JSX.Element {
