@@ -1,3 +1,25 @@
+# v3.2.0 (Fri Oct 03 2025)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Joe Nunnelley ([@JoeNunnelley](https://github.com/JoeNunnelley)), for all your work!
+
+#### 🚀 Enhancement
+
+- feat: update to latest version of forge [#25](https://github.com/tyler-technologies-oss/forge-react/pull/25) ([@DRiFTy17](https://github.com/DRiFTy17))
+
+#### 🐛 Bug Fix
+
+- Dependency reviewer [#15](https://github.com/tyler-technologies-oss/forge-react/pull/15) ([@JoeNunnelley](https://github.com/JoeNunnelley))
+- Security Code Scanning - configuration files [#18](https://github.com/tyler-technologies-oss/forge-react/pull/18) ([@JoeNunnelley](https://github.com/JoeNunnelley))
+
+#### Authors: 2
+
+- Joe Nunnelley ([@JoeNunnelley](https://github.com/JoeNunnelley))
+- Kieran Nichols ([@DRiFTy17](https://github.com/DRiFTy17))
+
+---
+
 # v3.1.0 (Thu Jan 30 2025)
 
 #### 🚀 Enhancement
