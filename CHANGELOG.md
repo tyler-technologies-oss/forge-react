@@ -1,3 +1,15 @@
+# v3.3.0 (Thu Apr 02 2026)
+
+#### 🚀 Enhancement
+
+- feat: update to Forge 3.14.0 [#31](https://github.com/tyler-technologies-oss/forge-react/pull/31) ([@DRiFTy17](https://github.com/DRiFTy17))
+
+#### Authors: 1
+
+- Kieran Nichols ([@DRiFTy17](https://github.com/DRiFTy17))
+
+---
+
 # v3.2.0 (Fri Oct 03 2025)
 
 :tada: This release contains work from a new contributor! :tada:
