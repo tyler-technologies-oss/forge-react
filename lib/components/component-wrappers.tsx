@@ -64,6 +64,7 @@ export const ForgeProfileCard = createElementProxy('forge-profile-card');
 export const ForgeRadio = createElementProxy('forge-radio');
 export const ForgeRadioGroup = createElementProxy('forge-radio-group');
 export const ForgeScaffold = createElementProxy('forge-scaffold');
+export const ForgeSecret = createElementProxy('forge-secret');
 export const ForgeSelect = createElementProxy('forge-select');
 export const ForgeSelectDropdown = createElementProxy('forge-select-dropdown');
 export const ForgeSkeleton = createElementProxy('forge-skeleton');
