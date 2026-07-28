@@ -1,3 +1,15 @@
+# v3.4.0 (Tue Jul 28 2026)
+
+#### 🚀 Enhancement
+
+- feat: update to Forge 3.15.0 [#32](https://github.com/tyler-technologies-oss/forge-react/pull/32) ([@samrichardsontylertech](https://github.com/samrichardsontylertech))
+
+#### Authors: 1
+
+- Sam Richardson ([@samrichardsontylertech](https://github.com/samrichardsontylertech))
+
+---
+
 # v3.3.0 (Thu Apr 02 2026)
 
 #### 🚀 Enhancement
